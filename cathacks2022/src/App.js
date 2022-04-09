@@ -1,21 +1,56 @@
 import EventCard from './EventCard'
 import './App.css';
+import React from 'react';
 
-function App() {
+class Event {
+  constructor(name, location, date, host) {
+    this.name = name;
+    this.location = location;
+    this.date = date;
+    this.host = host;
 
-  return (
+  }
+
+}
+
+class App extends React.Component {
+
+
+  constructor(props) {
+    super(props);
+    this.events = [];
+  }
+  
+  AddEvent(name, location, date, host) {
+    this.events.push(new Event(name, location, date, host));
+  }
+
+  DisplayEvents() {
+    let EventCardElements = [];
+    for (const [name, event] of Object.entries(this.events)) {
+      EventCardElements.push(new EventCard({name : event.name, location : event.location, date : event.date}))
+    }
+    return EventCardElements;
+  }
+
+
+  render() {
+    this.AddEvent("Cat Hacks VIII", "Grehan Second Floor", "April 9th, 2022", "UK ACM");
+    this.AddEvent("Cat Hacks VIII", "Grehan Second Floor", "April 9th, 2022", "UK ACM");
+    this.AddEvent("Cat Hacks VIII", "Grehan Second Floor", "April 9th, 2022", "UK ACM");
+    this.AddEvent("Cat Hacks VIII", "Grehan Second Floor", "April 9th, 2022", "UK ACM");
+    this.AddEvent("Cat Hacks VIII", "Grehan Second Floor", "April 9th, 2022", "UK ACM");
+    this.AddEvent("Cat Hacks VIII", "Grehan Second Floor", "April 9th, 2022", "UK ACM");
+
+
+    return (
     <div className="App">
-     <div className="App-Title">
-       <a>UKonnect</a>
-     </div>
       <nav className="App-navbar">       
-        <ul>
-          <li>
-            <a>Home</a>
-            <a>UKonnect</a>
-            <a>Contact</a>
-            <a>About</a></li>
-        </ul>
+            <a className='navbar-element'>Home</a>
+            <a className='navbar-element'>UKonnect</a>
+              <h1 className="App-Title">UKonnect</h1>
+            <a className='navbar-element'>Contact</a>
+            <a className='navbar-element'>About</a>
       </nav>
       
       
@@ -37,20 +72,18 @@ function App() {
       </div>
     
       <div className="card-container">
-        <EventCard name="test" date="January 22 2022" location="Grehan 2nd Floor" host="ACM"/>
-        <EventCard name="test" date="January 22 2022" location="Grehan 2nd Floor" host="ACM"/>
-        <EventCard name="test" date="January 22 2022" location="Grehan 2nd Floor" host="ACM"/>
-        <EventCard name="test" date="January 22 2022" location="Grehan 2nd Floor" host="ACM"/>
-        <EventCard name="test" date="January 22 2022" location="Grehan 2nd Floor" host="ACM"/>
-        <EventCard name="test" date="January 22 2022" location="Grehan 2nd Floor" host="ACM"/>
-        <EventCard name="test" date="January 22 2022" location="Grehan 2nd Floor" host="ACM"/>
-        <EventCard name="test" date="January 22 2022" location="Grehan 2nd Floor" host="ACM"/>
-        <EventCard name="test" date="January 22 2022" location="Grehan 2nd Floor" host="ACM"/>
-        <EventCard name="test" date="January 22 2022" location="Grehan 2nd Floor" host="ACM"/>
         
+        {
+          this.events.map(event => 
+            (<EventCard key={event.name} name={event.name} date={event.date} location={event.location} host={event.host} />)
+            )
+        } 
+        
+
       </div>
     </div>
   );
+}
 }
 
 export default App;
