@@ -1,7 +1,27 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
-
+.App-Title{
+  font-size: 40px;
+  font-weight: bold;
+  background-color: darkblue;
+}
+.App-navbar{
+  background-color: slategray;
+  font-weight: bold;
+  
+}
+.App-navbar a{
+  float: center;
+  margin: 2rem;
+  width: 25%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,14 +33,20 @@
   }
 }
 
-.App-header {
+.search-bar {
+  padding : 0.25rem 1rem;
+  margin : 0.25rem 0rem;
+}
+
+.card-container {
+  padding : 1.5rem 2.5rem;
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  display:grid;
+  gap: auto;
+  width: 100%;
+  grid-template-columns: auto auto auto auto;
+  
   color: white;
 }
 

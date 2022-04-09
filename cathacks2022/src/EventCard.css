@@ -1,0 +1,28 @@
+.event-card {
+    background-color : darkgrey;
+    color: black;
+    height: 20rem;
+    width: 15rem;
+    padding: 1.5rem 2rem;
+    margin: 1rem auto;
+    border: 0.25rem solid rgb(0, 0, 0);
+    border-radius : 5%;
+    transition: all 1s ease;
+}
+
+.event-card:hover {
+    transition-delay: .25s;
+    transform: scale(1.3);
+}
+
+/* @keyframes Card-hover-anim {
+    from {
+      height: 20rem;
+      width: 15rem;
+    }
+    to {
+      height: 25rem;
+      width: 20rem;
+    }
+  } */
+
