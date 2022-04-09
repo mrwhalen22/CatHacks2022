@@ -46,20 +46,31 @@
 
 .search-banner {
   display : flex;
+  position: relative;
+  width: 100%;
+
 
 }
 
-.search-bar .search-title {
-  display: grid;
-  gap : auto;
-  grid-template-columns: auto auto auto auto;
+.search-bar {
+  left: 0;
+  border-radius: 5%;
+  height: 25px;
+}
+
+.search-title {
+  display: inline-block;
   padding : 0.25rem 1rem;
   margin : 0.25rem 0rem;
+  right:0;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-variant: small-caps;
 }
 
 .card-container {
   padding : 1.5rem 2.5rem;
-  background-color: #282c34;
+  background-color: #ffffff;
   min-height: 100vh;
   display:grid;
   gap: auto;

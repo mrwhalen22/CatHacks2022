@@ -21,17 +21,10 @@ class App extends React.Component {
     this.events = [];
   }
   
-  AddEvent(name, location, date, host) {
+  AddEvent(name, location, date, host) {;
     this.events.push(new Event(name, location, date, host));
   }
 
-  DisplayEvents() {
-    let EventCardElements = [];
-    for (const [name, event] of Object.entries(this.events)) {
-      EventCardElements.push(new EventCard({name : event.name, location : event.location, date : event.date}))
-    }
-    return EventCardElements;
-  }
 
 
   render() {
@@ -42,8 +35,7 @@ class App extends React.Component {
     this.AddEvent("Cat Hacks VIII", "Grehan Second Floor", "April 9th, 2022", "UK ACM");
     this.AddEvent("Cat Hacks VIII", "Grehan Second Floor", "April 9th, 2022", "UK ACM");
 
-
-    return (
+    let myHTML = (
     <div className="App">
       <nav className="App-navbar">       
             <a className='navbar-element'>Home</a>
@@ -56,16 +48,8 @@ class App extends React.Component {
       
       <div className='search-banner'>
         <div>
-          <h4 className='search-title'>City:</h4>
+          <h4 className='search-title'>Search:</h4>
           <input type="location" className="search-bar"></input>
-        </div>
-        <div>
-          <h4 className='search-title'>Date:</h4>
-          <input type="date" className="search-bar"></input>
-        </div>
-        <div>
-          <h4 className='search-title'>Genre:</h4>
-          <input type="search" className="search-bar"></input>
         </div>
         
     
@@ -74,15 +58,17 @@ class App extends React.Component {
       <div className="card-container">
         
         {
-          this.events.map(event => 
-            (<EventCard key={event.name} name={event.name} date={event.date} location={event.location} host={event.host} />)
-            )
+          this.events.map(event => <EventCard key={event.name} name={event.name} date={event.date} location={event.location} host={event.host}/>)
         } 
         
 
       </div>
     </div>
   );
+
+  
+  return myHTML;
+
 }
 }
 
