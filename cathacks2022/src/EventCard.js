@@ -11,7 +11,7 @@ class EventCard extends React.Component {
                 <h4 className="event-date">{this.props.date}</h4>
             </div>
             <h4 className="event-location">{this.props.location}</h4>
-            <button className="event-button">RSVP Here</button>
+            <button className="event-button"><span>RSVP Here</span></button>
 
             
 

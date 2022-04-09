@@ -10,6 +10,7 @@
 .App-Title{
   font-size: 5rem;
   padding: 0.5rem 1rem;
+  color: white;
 }
 .App-navbar{
   display: flex;
@@ -29,6 +30,7 @@
 .navbar-element {
   padding: 1rem 1rem;
   width: 20%;
+  color: white;
 }
 
 .navbar-element:hover {
@@ -39,6 +41,7 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+
 }
 
 .search-banner {
