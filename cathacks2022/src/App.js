@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import EventCard from './EventCard'
 import './App.css';
 
@@ -20,13 +19,21 @@ function App() {
       </nav>
       
       
-      <div>
-        City:
+      <div className='search-banner'>
+        <div>
+          <h4 className='search-title'>City:</h4>
+          <input type="location" className="search-bar"></input>
+        </div>
+        <div>
+          <h4 className='search-title'>Date:</h4>
+          <input type="date" className="search-bar"></input>
+        </div>
+        <div>
+          <h4 className='search-title'>Genre:</h4>
           <input type="search" className="search-bar"></input>
-        Date: 
-          <input type="search" className="search-bar"></input>
-        Genre:
-        <input type="search" className="search-bar"></input>
+        </div>
+        
+    
       </div>
     
       <div className="card-container">

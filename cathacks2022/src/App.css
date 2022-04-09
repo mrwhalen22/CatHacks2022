@@ -33,7 +33,16 @@
   }
 }
 
-.search-bar {
+.search-banner {
+  display : flex;
+  justify-content: space-around;
+
+}
+
+.search-bar .search-title {
+  display: grid;
+  gap : auto;
+  grid-template-columns: auto auto auto auto;
   padding : 0.25rem 1rem;
   margin : 0.25rem 0rem;
 }
