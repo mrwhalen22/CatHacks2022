@@ -2,6 +2,7 @@ import EventCard from './EventCard'
 import './App.css';
 import React from 'react';
 
+
 class Event {
   constructor(name, location, date, host) {
     this.name = name;
@@ -12,30 +13,32 @@ class Event {
   }
 
 }
-
 class App extends React.Component {
-
 
   constructor(props) {
     super(props);
-    this.events = [];
+    
   }
   
-  AddEvent(name, location, date, host) {;
+  AddEvent(name, location, date, host) {
     this.events.push(new Event(name, location, date, host));
   }
 
-
+  DisplayEvents() {
+    let EventCardElements = [];
+    for (const [name, event] of Object.entries(this.events)) {
+      EventCardElements.push(new EventCard({name : event.name, location : event.location, date : event.date}))
+    }
+    return EventCardElements;
+  }
+  
 
   render() {
-    this.AddEvent("Cat Hacks VIII", "Grehan Second Floor", "April 9th, 2022", "UK ACM");
-    this.AddEvent("Cat Hacks VIII", "Grehan Second Floor", "April 9th, 2022", "UK ACM");
-    this.AddEvent("Cat Hacks VIII", "Grehan Second Floor", "April 9th, 2022", "UK ACM");
-    this.AddEvent("Cat Hacks VIII", "Grehan Second Floor", "April 9th, 2022", "UK ACM");
-    this.AddEvent("Cat Hacks VIII", "Grehan Second Floor", "April 9th, 2022", "UK ACM");
-    this.AddEvent("Cat Hacks VIII", "Grehan Second Floor", "April 9th, 2022", "UK ACM");
+    
 
-    let myHTML = (
+    
+    
+    return (
     <div className="App">
       <nav className="App-navbar">       
             <a className='navbar-element'>Home</a>
@@ -47,29 +50,28 @@ class App extends React.Component {
       
       
       <div className='search-banner'>
-        <div>
-          <h4 className='search-title'>Search:</h4>
-          <input type="location" className="search-bar"></input>
-        </div>
-        
-    
+        <label>Search Events</label>
+        <input className="search-txt" type="search" id="search" data-search></input>
+        <a className="search-btn" href="#"></a>
       </div>
     
       <div className="card-container">
         
         {
-          this.events.map(event => <EventCard key={event.name} name={event.name} date={event.date} location={event.location} host={event.host}/>)
+          this.props.events.map(event => 
+            (<EventCard id={event.id} key={event.name} name={event.name} date={event.date} location={event.location} host={event.host} />)
+            )
         } 
         
 
       </div>
     </div>
+    
   );
-
   
-  return myHTML;
+}
 
 }
-}
+
 
 export default App;

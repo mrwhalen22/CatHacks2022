@@ -5,7 +5,7 @@ class EventCard extends React.Component {
 
     render() {
         
-        return <div className="event-card">
+        return <div id={this.props.id} className="event-card">
             <div className="event-image"></div>
             <h3 className="event-name">{this.props.name}</h3>
             <div className="event-date-container">
