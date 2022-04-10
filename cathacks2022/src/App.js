@@ -43,14 +43,14 @@ class App extends React.Component {
       <nav className="App-navbar">       
             <a className='navbar-element'>Home</a>
             <a className='navbar-element'>UKonnect</a>
-              <h1 className="App-Title">UKonnect</h1>
+            <img className="App-Title" src="./logo.png" alt=''/>
             <a className='navbar-element'>Contact</a>
             <a className='navbar-element'>About</a>
       </nav>
       
       
       <div className='search-banner'>
-        <label>Search Events</label>
+        <label className='search-title'>Search Events</label>
         <input className="search-txt" type="search" id="search" data-search></input>
         <a className="search-btn" href="#"></a>
       </div>
@@ -62,6 +62,8 @@ class App extends React.Component {
             (<EventCard id={event.id} key={event.name} name={event.name} date={event.date} location={event.location} host={event.host} />)
             )
         } 
+
+        <img src='./Gangnam.gif' alt='' className='gangnam'/>
         
 
       </div>

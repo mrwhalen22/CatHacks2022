@@ -8,24 +8,26 @@
   text-align: center;
 }
 .App-Title{
-  font-size: 5rem;
-  padding: 0.5rem 1rem;
-  color: white;
+  width: 16rem;
+  height: 6rem;
+  object-fit: fill;
+  z-index: 10;
 }
+
 .App-navbar{
   display: flex;
   font-weight: bold;
   background-color: darkblue;
   align-items: center;
   font-size: 1.5rem;
-  padding: 0.5rem 0;
-  
-}
-
-.App-navbar {
+  padding: 1.5rem 0.5rem;
+  padding-bottom: 0.5rem;
   float: center;
   width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-variant: small-caps;
 }
+
 
 .navbar-element {
   padding: 1rem 1rem;
@@ -84,3 +86,12 @@
   display: none;
 }
 
+.gangnam {
+  height: 20rem;
+  position: relative;
+  margin: 1rem 1rem;
+  padding: 0.75rem 1rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 10px solid black;
+}
